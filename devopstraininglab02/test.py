@@ -1,4 +1,5 @@
-from DevOpsTrainingsLab02.__init__ import *
+#from DevOpsTrainingsLab02.src.__init__ import *
+from .__init__ import *
 
 def test_function_init():
     assert function_init() == 0
