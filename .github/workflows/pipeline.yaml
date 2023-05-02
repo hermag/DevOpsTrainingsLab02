@@ -2,6 +2,10 @@ name: Python package
 
 on: [push]
 
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
 jobs:
   build:
 
@@ -46,6 +50,12 @@ jobs:
           name: devopstraininglab02
       - name: Check what is going on
         run: ls -laF
-      - name: Install the wheel package and Create the Dockerfile
+      - name: Install the wheel package to test it
         run: |
           pip install ./devopstraininglab02-1.0.0-py2.py3-none-any.whl
+      - name: Build Docker image and push
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{github.actor}}
+          password: ${{secrets.GITHUB_TOKEN}}
