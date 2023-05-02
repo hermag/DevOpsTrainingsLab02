@@ -19,7 +19,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install ruff pytest
+          pip install ruff pytest wheel
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       # - name: Lint with ruff
       #   run: |
@@ -33,6 +33,5 @@ jobs:
           pytest test.py
       - name: Build an artifact
         run: |
-          pip install setuptools
           python setup.py sdist bdist_wheel
           la -laF
