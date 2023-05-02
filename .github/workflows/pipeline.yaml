@@ -34,4 +34,8 @@ jobs:
       - name: Build an artifact
         run: |
           python setup.py sdist bdist_wheel
-          ls -laF
+      - name: Upload wheel package
+        uses: actions/upload-artifact@v3
+        with:
+          name: devopstraininglab02
+          path: ./dist/devopstraininglab02-1.0.0-py2.py3-none-any.whl
