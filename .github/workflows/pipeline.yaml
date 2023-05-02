@@ -63,5 +63,6 @@ jobs:
         run: |
               mv devopstraininglab02-1.0.0-py2.py3-none-any.whl ./flaskapp/
               cd ./flaskapp
+              ls -laF
               docker build -t "ghcr.io/hermag/devopstrainingslab02:latest" -f ./Dockerfile .
               docker push ghcr.io/hermag/DevOpsTrainingsLab02:latest
