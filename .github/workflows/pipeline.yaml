@@ -62,5 +62,5 @@ jobs:
       - name: Build and Push Image
         run: |
               cd ./flaskapp
-              docker build --tag ghcr.io/hermag/DevOpsTrainingsLab02:latest -f ./Dockerfile .
+              docker build -t "ghcr.io/hermag/DevOpsTrainingsLab02:latest" -f ./Dockerfile .
               docker push ghcr.io/hermag/DevOpsTrainingsLab02:latest
