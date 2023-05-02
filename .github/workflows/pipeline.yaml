@@ -53,9 +53,14 @@ jobs:
       - name: Install the wheel package to test it
         run: |
           pip install ./devopstraininglab02-1.0.0-py2.py3-none-any.whl
-      - name: Build Docker image and push
+      - name: Login to GHCR
         uses: docker/login-action@v1
         with:
           registry: ghcr.io
           username: ${{github.actor}}
           password: ${{secrets.GITHUB_TOKEN}}
+      - name: Build and Push Image
+        run: |
+              cd ./flaskapp
+              docker build . --tag ghcr.io/hermag/DevOpsTrainingsLab02:latest -f ./Dockerfile .
+              docker push ghcr.io/hermag/DevOpsTrainingsLab02:latest
