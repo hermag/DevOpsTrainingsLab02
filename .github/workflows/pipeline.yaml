@@ -44,5 +44,5 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: devopstraininglab02
-          run: |
-            ls -laF
+      - name: Check what is going on
+        run: ls -laF
