@@ -46,3 +46,6 @@ jobs:
           name: devopstraininglab02
       - name: Check what is going on
         run: ls -laF
+      - name: Install the wheel package and Create the Dockerfile
+        run: |
+          pip install ./devopstraininglab02-1.0.0-py2.py3-none-any.whl
