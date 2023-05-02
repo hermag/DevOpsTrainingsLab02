@@ -39,3 +39,10 @@ jobs:
         with:
           name: devopstraininglab02
           path: ./dist/devopstraininglab02-1.0.0-py2.py3-none-any.whl
+          retention-days: 5
+      - name: Download wheel package
+        uses: actions/download-artifact@v3
+        with:
+          name: devopstraininglab02
+          run: |
+            ls -laF
